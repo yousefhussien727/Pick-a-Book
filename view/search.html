@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pick-a-Book</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tooplate-style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="tm-site-header">
+            <h1 class="tm-site-name">Pick-a-Book</h1>
+            <p class="tm-site-description">Your Used Online Bookstore</p>
+
+            <nav class="navbar navbar-expand-md tm-main-nav-container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tmMainNav" aria-controls="tmMainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <div class="collapse navbar-collapse tm-main-nav" id="tmMainNav">
+                    <ul class="nav nav-fill tm-main-nav-ul">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Catalogs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Awards</a></li>
+                        <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="tm-main-content">
+            <section class="row tm-margin-b-l">
+                <div class="col-12">
+                    <h2 class="tm-blue-text tm-margin-b-p">Search By ID</h2>
+                </div>
+                <div class="col-md-12 col-sm-12 mb-md-0 mb-5 tm-overflow-auto">
+                    <div class="mr-lg-5">
+                        <form action="#" method="get" class="tm-contact-form" id="searchby-id">
+                            <div class="form-group">
+                                <input type="text" id="bookID" name="bookID" class="form-control" placeholder="Enter Book ID" required />
+                            </div>
+                            <button type="submit" class="tm-btn tm-btn-blue float-right">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="row tm-margin-b-l">
+                <div class="col-12">
+                    <h2 class="tm-blue-text tm-margin-b-p">Search By Title</h2>
+                </div>
+                <div class="col-md-12 col-sm-12 mb-md-0 mb-5 tm-overflow-auto">
+                    <div class="mr-lg-5">
+                        <form action="#" method="get" class="tm-contact-form" id="searchby-title">
+                            <div class="form-group">
+                                <input type="text" id="bookTitle" name="bookTitle" class="form-control" placeholder="Enter Book Title" required />
+                            </div>
+                            <button type="submit" class="tm-btn tm-btn-blue float-right">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            Copyright &copy; 2022 | Pick-a-Book (Online Used Bookstore)
+        </footer>
+    </div>
+
+    <!-- JS files -->
+    <script src="js-lib/jquery-1.11.3.min.js"></script>
+    <script src="js-lib/popper.min.js"></script>
+    <script src="js-lib/bootstrap.min.js"></script>
+    <script src="js/bookSearch.js"></script>
+</body>
+
+</html>

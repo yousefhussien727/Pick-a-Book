@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="1046661087420-gv6gvpgfo7lc01hr5054o6m351c75425.apps.googleusercontent.com">
+    <title>Pick-a-Book</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tooplate-style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="tm-site-header">
+            <h1 class="tm-site-name">Pick-a-Book</h1>
+            <p class="tm-site-description">Your Used Online Bookstore</p>
+
+            <nav class="navbar navbar-expand-md tm-main-nav-container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tmMainNav" aria-controls="tmMainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <div class="collapse navbar-collapse tm-main-nav" id="tmMainNav">
+                    <ul class="nav nav-fill tm-main-nav-ul">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Catalogs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Awards</a></li>
+                        <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="tm-main-content">
+            <section class="row tm-margin-b-l">
+                <div class="col-6">
+                    <h2 class="tm-blue-text tm-margin-b-p">Sign In</h2>
+                </div>
+                <div class="col-6">
+                    <h2 class="tm-blue-text tm-margin-b-p">Sign Up</h2>
+                </div>
+                <div class="col-md-6 col-sm-12 mb-md-0 mb-5 tm-overflow-auto">
+                    <div class="mr-lg-5">
+                        <form action="#" method="post" class="tm-contact-form">
+                            <div class="form-group">
+                                <input type="email" id="contact_name" name="contact_name" class="form-control" placeholder="Email" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="contact_email" name="contact_email" class="form-control" placeholder="Password" required />
+                            </div>
+                            <button type="submit" onclick="onSignInClicked()" class=" tm-btn tm-btn-gray float-left">using Google</button>
+                            <button type="submit" class="tm-btn tm-btn-blue float-right">Sign In</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 mb-md-0 mb-5 tm-overflow-auto">
+                    <div class="mr-lg-5">
+                        <form action="#" method="post" class="tm-contact-form">
+                            <div class="form-group">
+                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email" required />
+                            </div>
+                            <div class="form-group">
+                                <textarea id="contact_message" name="contact_message" class="form-control" rows="8" placeholder="Message" required></textarea>
+                            </div>
+
+                            <button type="submit" class="tm-btn tm-btn-blue float-right">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            Copyright &copy; 2022 | Pick-a-Book (Online Used Bookstore)
+        </footer>
+    </div>
+
+    <!-- JS files -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/api.js?onload=onLibraryLoaded" async defer></script>
+    <script>
+        var auth2 = undefined;
+
+        function onLibraryLoaded() {
+            gapi.load('auth2', function () {
+                auth2 = gapi.auth2.init({
+                    client_id: '1046661087420-gv6gvpgfo7lc01hr5054o6m351c75425.apps.googleusercontent.com',
+                    scope: 'profile'
+                })
+
+                // when page first loads, user is not signed in
+                console.log('user is signed in: ', isUserSignedIn());
+
+                // Method 2: sign in handler hooked up by the library
+                console.log('click handler')
+                auth2.attachClickHandler(document.getElementById('button2'), {}, function (googleUser) {
+                    console.log('click handler callback')
+                    document.querySelector('#name').innerText = JSON.stringify(googleUser)
+                })
+
+                // listen for changes in user or signIn status
+                auth2.isSignedIn.listen(function (isSignedIn) {
+                    console.log('change in sign in status ', isSignedIn)
+                    if (isSignedIn) {
+                        document.querySelector('#signout').style.display = 'block';
+                    } else {
+                        document.querySelector('#signout').style.display = 'none';
+                    }
+
+                })
+            })
+
+            gapi.load('signin2', function () {
+                // Method 3: render a sign in button
+                // using this method will show Signed In if the user is already signed in
+                var opts = {
+                    width: 200,
+                    height: 50,
+                    onSuccess: function (googleUser) {
+                        console.log('signin2 success')
+                        document.querySelector('#name').innerText = JSON.stringify(googleUser);
+                    }
+                }
+                gapi.signin2.render('button3', opts)
+            })
+        }
+
+
+        // Method 1: sign in handler hooked up yourself
+        function onSignInClicked() {
+            // using global variable
+            auth2.signIn().then(function (result) {
+                console.log('sign in successful')
+                document.querySelector('#name').innerText = JSON.stringify(result)
+            }, function (err) {
+                console.log('this is an error')
+            })
+        }
+
+        function isUserSignedIn() {
+            // user is signed in if you click the button since the lib has been loaded already
+            var isSignedIn = auth2.isSignedIn.get();
+            document.querySelector('#name').innerText = isSignedIn;
+            return isSignedIn
+        }
+
+        // get the current users info
+        function showCurrentUserInfo() {
+            var googleUser = auth2.currentUser.get()
+            document.querySelector('#name').innerText = JSON.stringify(googleUser)
+        }
+
+        function signOut() {
+            auth2.signOut().then(function () {
+                console.log('user signed out')
+                document.querySelector('#name').innerText = 'user signed out'
+            })
+        }
+
+        function onSignIn(googleUser) {
+            var id_token = googleUser.getAuthResponse().id_token;
+
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://localhost:5000');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function () {
+            console.log('Signed in as: ' + xhr.responseText);
+        };
+        xhr.send('idtoken=' + id_token);
+    </script>
+</body>
+
+</html>
