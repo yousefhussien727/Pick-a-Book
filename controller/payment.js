@@ -9,14 +9,6 @@ paypal.configure({
     'client_secret': process.env.CLIENT_SECRET,
 });
 
-// function displayBooksList(req, res, next) {
-//     res.type('html');
-//     res.sendFile(path.join(__dirname, '../view/index.html'));
-// }
-// function displayBookSearch(req, res, next) {
-//     res.type('html');
-//     res.sendFile(path.join(__dirname, '../view/search.html'));
-// }
 function displayPayment(req, res, next) {
     res.type('html');
     res.sendFile(path.join(__dirname, '../view/payment.html'));
@@ -72,7 +64,7 @@ function completePayment(req, res, next) {
         "payer_id": payerId,
         "transactions": [{
             "amount": {
-                "currency": "EGY",
+                "currency": "USD",
                 "total": "270.00"
             }
         }]

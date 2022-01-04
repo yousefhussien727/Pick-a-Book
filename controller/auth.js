@@ -40,7 +40,6 @@ export async function login(req, res, next) {
     const user = await findOne({ email }).select('+password');
     if (!user) {
         return next(new ErrorResponse('Invalid info', 401));
-
     }
     const isMatch = await matchPassword(password);
     if (!isMatch) {

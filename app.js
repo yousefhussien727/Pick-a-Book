@@ -1,9 +1,8 @@
-// import logger from './middlewares/logger.js'
-const logger = require('./middlewares/logger')
 const dotenv = require('dotenv');
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const logger = require('./middlewares/logger');
 const paypal = require('paypal-rest-sdk');
 
 // Load Env Variables
