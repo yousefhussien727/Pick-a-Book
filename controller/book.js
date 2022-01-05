@@ -30,7 +30,7 @@ function getBookbyID(req, res, next) {
         .catch(err => {
             // console.log('Database Error: ' + err);
             return res.json({ success: false, message: 'Database Error: ' + err });
-        })
+        });
 }
 
 function getBookbyTitle(req, res, next) {
@@ -69,7 +69,6 @@ function getAllBooks(req, res, next) {
 
 function addBook(req, res, next) {
     // For Testing
-    // Book on Goodreads Link >> https://www.goodreads.com/book/show/6485971-cloud-computing-for-dummies?from_search=true&from_srp=true&qid=rTPjUbSXJz&rank=1
     // const data = {
     //     bookID: "1000",
     //     isbn: "0470484705",

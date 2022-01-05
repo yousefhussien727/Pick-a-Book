@@ -52,6 +52,15 @@ async function createUser(req, res, next) {
 }
 
 async function updateUser(req, res, next) {
+    // const user = {
+    //     accountID: 111,
+    //     type: "User",
+    //     fname: "Basel",
+    //     lname: "Marawan",
+    //     email: "basel@gmail.com",
+    //     password: "b123",
+    // };
+
     const user = await User.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
         runValidators: true

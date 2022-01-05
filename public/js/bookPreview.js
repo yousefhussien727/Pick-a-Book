@@ -27,16 +27,14 @@ window.addEventListener('load', () => {
             document.getElementById('buy-btn').href = window.location.origin + "/payment?price=" + book.price;
 
             // Get Book GoodReads Rating
+            //https://www.goodreads.com/book/review_counts.json?isbns=0470484705
             fetch("https://www.goodreads.com/book/review_counts.json?isbns=" + book.isbn, {
-                mode: 'no-cors',
+                // mode: 'no-cors',
             }).then(res => {
                 console.log(res);
-                // document.getElementById('rating').innerHTML = book.rating;
+                // document.getElementById('rating').innerHTML = res.body.average_rating;
+                document.getElementById('rating').innerHTML = book.rating;
             }).catch(err => console.log(err));
         })
         .catch(err => console.log(err));
-
-    // const book_isbn = document.getElementById('isbn').innerText;
-    // console.log("ISBN: " + book_isbn);
-
 });
