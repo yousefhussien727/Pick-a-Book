@@ -51,9 +51,12 @@ Application Flow Diagram | System Actors
 ## Authors
 
 👤 **Yousef Hussien**
-
 - Github: [@yousefhussien727](https://github.com/yousefhussien727)
 - Linkedin: [/in/yousefhussien](https://www.linkedin.com/in/yousefhussien/)
+
+👤 **Yousef Ali**
+- Github: [@YousefAYousef](https://github.com/YousefAYousef)
+- Linkedin: [/in/yousef-ali-b4108118b/](https://www.linkedin.com/in/yousef-ali-b4108118b/)
 
 ## Show your support ❤
 Give a ⭐️ if you like this project!
