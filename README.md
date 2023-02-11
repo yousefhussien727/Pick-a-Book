@@ -43,13 +43,10 @@ Application Flow Diagram | System Actors
 #### Book Page
 <img src="./screenshots/3.PNG" width="70%">
 
-SignIn Page | Google API
-:----------:|:------------:
-<img src="./screenshots/4.PNG" width="300px"> | <img src="./screenshots/9.jpeg" width="300px">
+| SignIn Google API | SignIn Google API | Payment PayPal API | Payment PayPal API |
+|-------------------|-------------------|--------------------|--------------------|
+<img src="./screenshots/4.PNG" width="240px"> | <img src="./screenshots/9.jpeg" width="240px"> | <img src="./screenshots/5.PNG" width="240px"> | <img src="./screenshots/6.PNG" width="240px">
 
-Payment Page | PayPal API
-:-----------:|:-----------:
-<img src="./screenshots/5.PNG" width="300px"> | <img src="./screenshots/6.PNG" width="300px">
 
 ## Authors
 
