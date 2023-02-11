@@ -10,11 +10,10 @@
 > This application follows the public cloud deployment model as it is provisioned for general use and any customer can easily view all books, and by creating an account users can access all system services such as buying and selling used books. The public model also helps the service grow faster because it draws in a large pool of users.
 
 ## System Design 📐
-#### 🔹 Application Flow Diagram
-<img src="./screenshots/7.PNG" width="70%">
 
-#### 🔹 System Actors
-<img src="./screenshots/8.PNG" width="70%">
+Application Flow Diagram | System Actors
+:----------:|:------------:
+<img src="./screenshots/7.png" height="300px"> | <img src="./screenshots/8.png" height="300px">
 
 ## Built With ⚡️
 - Node.js
