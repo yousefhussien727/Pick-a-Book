@@ -11,10 +11,10 @@
 
 ## System Design 📐
 #### 🔹 Application Flow Diagram
-<img src="./screenshots/flow.png" width="100%">
+<img src="./screenshots/7.PNG" width="70%">
 
 #### 🔹 System Actors
-<img src="./screenshots/actors.png" width="100%">
+<img src="./screenshots/8.PNG" width="70%">
 
 ## Built With ⚡️
 - Node.js
@@ -36,12 +36,21 @@
 
 ## Project Preview 👀
 #### Home Page
-<img src="./screenshots/s1.ng" width="90%">
+<img src="./screenshots/1.PNG" width="70%">
 
+#### Search
+<img src="./screenshots/2.PNG" width="70%">
 
-Customer Service Menu | Facility Details Menu
-:---------:|:-------------------------:
-![Customer Service Menu](./screenshots/s2.ng) | ![Facility Details Menu](./screenshots/s3.png)
+#### Book Page
+<img src="./screenshots/3.PNG" width="70%">
+
+SignIn Page | Google API
+:----------:|:------------:
+<img src="./screenshots/4.PNG" width="300px"> | <img src="./screenshots/9.jpeg" width="300px">
+
+Payment Page | PayPal API
+:-----------:|:-----------:
+<img src="./screenshots/5.PNG" width="300px"> | <img src="./screenshots/6.PNG" width="300px">
 
 ## Authors
 
